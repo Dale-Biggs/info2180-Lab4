@@ -3,6 +3,7 @@ window.onload= function(){
   var elemStart= document.getElementById('start');
   var myBoundary1=document.getElementById('boundary1');
   var myBoundary=document.getElementsByClassName('boundary');
+  var elemEnd=document.getElementById('end');
 
 
   elemStart.onmouseover= function(){
@@ -22,14 +23,14 @@ window.onload= function(){
           myBoundary[elem].classList.add("youlose");
         }
       });
-    };
+    }
   }
 
-  /*function border1Contact(){
-    myBoundary1.addEventListener("mouseover", function(){
-      myBoundary1.classList.add("youlose");
-      alert('You Lose');
-    })
-  }*/
-
-  }
+  elemEnd.onmouseover=function(){
+    if (myBoundary[1].classList[1]=="youlose"){
+      alert('Go back cheater!');
+    }else{
+      alert('You win!');
+    }
+}
+}
