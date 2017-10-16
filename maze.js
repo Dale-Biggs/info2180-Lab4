@@ -7,13 +7,7 @@ window.onload= function(){
 
 
   elemStart.onmouseover= function(){
-    for (var elem=0; elem<myBoundary.length-1; elem++){
-      if(myBoundary[elem].classList[1]=="youlose"){
-        myBoundary[elem].classList.remove("youlose");
-      }else{
         borderContact();
-      }
-    }
   }
 
   function borderContact(){
@@ -32,5 +26,13 @@ window.onload= function(){
     }else{
       alert('You win!');
     }
-}
+  }
+
+  elemStart.onclick=function(){
+    for (var elem=0; elem<myBoundary.length-1; elem++){
+      if(myBoundary[elem].classList[1]=="youlose"){
+        myBoundary[elem].classList.remove("youlose");
+      }
+    }
+  }
 }
