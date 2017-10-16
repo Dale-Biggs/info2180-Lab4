@@ -4,10 +4,10 @@ window.onload= function(){
   var myBoundary1=document.getElementById('boundary1');
   var myBoundary=document.getElementsByClassName('boundary');
   var elemEnd=document.getElementById('end');
-
+  var status=document.getElementById('status');
 
   elemStart.onmouseover= function(){
-        borderContact();
+    borderContact();
   }
 
   function borderContact(){
@@ -15,6 +15,7 @@ window.onload= function(){
       myBoundary[i].addEventListener("mouseover", function(){
         for(var elem=0; elem<myBoundary.length-1;elem++){
           myBoundary[elem].classList.add("youlose");
+          status.innerHTML="You Lose";
         }
       });
     }
@@ -22,9 +23,9 @@ window.onload= function(){
 
   elemEnd.onmouseover=function(){
     if (myBoundary[1].classList[1]=="youlose"){
-      alert('Go back cheater!');
+
     }else{
-      alert('You win!');
+      status.innerHTML="You Win";
     }
   }
 
@@ -33,6 +34,8 @@ window.onload= function(){
       if(myBoundary[elem].classList[1]=="youlose"){
         myBoundary[elem].classList.remove("youlose");
       }
+    }if (status.innerHTML=="You Lose"||status.innerHTML=="You Win"){
+      status.innerHTML="Move your mouse over the 'S' to begin.";
+    }
     }
   }
-}
